@@ -19,7 +19,7 @@ function ViewImageScreen(props) {
       </View>
       <Image
         resizeMode='contain'
-        style={styles.image}
+        style={styles.image} // TODO: I am add styles . images in this line review it later
         source={require('../assets/chair.jpg')}
       />
     </View>

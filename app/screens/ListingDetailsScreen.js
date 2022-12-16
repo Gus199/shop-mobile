@@ -6,12 +6,13 @@ import Colors from '../config/colors';
 function ListingDetailsScreen() {
   return (
     <View>
-      <Image style={styles.image} source={require('../assets/amar.png')} />
+      <Image style={styles.image} source={require('../assets/amar1.png')} />
       <View style={styles.detailsContainer}>
         <AppText style={styles.title}>RedJacket for sale</AppText>
         <AppText style={styles.price}>$100</AppText>
         <View style={styles.userContainer}>
           <ListItem
+           style={styles.image}
             image={require('../assets/amar1.png')}
             title='Amar Gher'
             subTitle='5 Listing'
