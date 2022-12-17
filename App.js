@@ -11,8 +11,9 @@ import AppTextInput from './app/componenets/AppTextInput';
 import { Switch } from 'react-native-gesture-handler';
 import AppPicker from './app/componenets/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
-
+import RegisterScreen from './app/screens/RegisterScreen';
+import ListingEditScreen from './app/screens/ListingEditScreen';
 
 export default function App() {
-  return <LoginScreen/>;
+  return <ListingEditScreen />;
 }
