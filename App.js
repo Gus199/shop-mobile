@@ -13,7 +13,15 @@ import AppPicker from './app/componenets/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
 import RegisterScreen from './app/screens/RegisterScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
+import Icon from './app/componenets/Icon';
+import ListItem from './app/componenets/lists/ListItem';
+import AccountScreen from './app/screens/AccountScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
 
 export default function App() {
-  return <ListingEditScreen />;
+  return (
+    <Screen>
+      <l;ml; />
+    </Screen>
+  );
 }

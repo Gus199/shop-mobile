@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import ListItem from '../componenets/ListItem';
-import ListItemDeleteAction from '../componenets/ListItemDeleteAction';
-import ListItemSeparator from '../componenets/ListItemSeparator';
+import ListItem from '../componenets/lists/ListItem';
+import ListItemDeleteAction from '../componenets/lists/ListItemDeleteAction';
+import ListItemSeparator from '../componenets/lists/ListItemSeparator';
 import Screen from '../componenets/Screen';
 
 const initialMessages = [
@@ -23,7 +23,7 @@ const initialMessages = [
 
 function MessagesScreen(props) {
   const [messages, setMessages] = useState(initialMessages);
-  const [refreshing, setRefreshing] =useState(false)
+  const [refreshing, setRefreshing] = useState(false);
   const handleDelete = (message) => {
     setMessages(messages.filter((m) => m.id !== message.id));
   };
@@ -55,7 +55,7 @@ function MessagesScreen(props) {
               description: 'D2',
               image: require('../assets/amar1.png'),
             },
-          ])
+          ]);
         }}
       />
     </Screen>
