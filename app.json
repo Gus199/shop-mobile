@@ -6,7 +6,6 @@
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "splash": {
-    
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,13 +20,10 @@
     },
     "android": {
       "adaptiveIcon": {
-       
         "backgroundColor": "#FFFFFF"
       }
     },
-    "web": {
-     
-    },
+    "web": {},
     "description": "A marketplace for selling stuff you don't need anymore"
   }
 }

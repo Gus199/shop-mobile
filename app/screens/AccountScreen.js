@@ -1,36 +1,37 @@
-import React from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import React from 'react';
+import { StyleSheet, View, FlatList } from 'react-native';
 
-import Screen from "../componenets/Screen";
-import { ListItem, ListItemSeparator } from "../componenets/lists";
-import colors from "../config/colors";
-import Icon from "../componenets/Icon";
+import Screen from '../componenets/Screen';
+import { ListItem, ListItemSeparator } from '../componenets/lists';
+import colors from '../config/colors';
+import Icon from '../componenets/Icon';
 
 const menuItems = [
   {
-    title: "My Listings",
+    title: 'My Listings',
     icon: {
-      name: "format-list-bulleted",
+      name: 'format-list-bulleted',
       backgroundColor: colors.primary,
     },
   },
   {
-    title: "My Messages",
+    title: 'My Messages',
     icon: {
-      name: "email",
+      name: 'email',
       backgroundColor: colors.secondary,
     },
+    targetScreen: 'Messages',
   },
 ];
 
-function AccountScreen(props) {
+function AccountScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
-          title="Amar Gher"
-          subTitle="augustine2903a@gmail.com"
-          image={require("../assets/amar1.png")}
+          title='Amar Gher'
+          subTitle='augustine2903a@gmail.com'
+          image={require('../assets/amar1.png')}
         />
       </View>
       <View style={styles.container}>
@@ -47,13 +48,14 @@ function AccountScreen(props) {
                   backgroundColor={item.icon.backgroundColor}
                 />
               }
+              onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
         />
       </View>
       <ListItem
-        title="Log Out"
-        IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
+        title='Log Out'
+        IconComponent={<Icon name='logout' backgroundColor='#ffe66d' />}
       />
     </Screen>
   );

@@ -1,39 +1,53 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import Colors from '../config/colors';
-import AppTex from './AppText';
-function Card({ title, subTitle, image }) {
+import React from "react";
+import {
+  View,
+  StyleSheet,
+  Image,
+  TouchableWithoutFeedback,
+} from "react-native";
+
+import Text from "./Text";
+import colors from "../config/colors";
+
+function Card({ title, subTitle, imageUrl, onPress }) {
   return (
-    <View style={styles.car}>
-      <Image style={styles.image} source={image} />
-      <View style={styles.detailsContainer}>
-        <AppTex style={styles.title}>{title}</AppTex>
-        <AppTex style={styles.subTitle}>{subTitle}</AppTex>
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.card}>
+        <Image style={styles.image} source={{uri: imageUrl}} />
+        <View style={styles.detailsContainer}>
+          <Text style={styles.title} numberOfLines={1}>
+            {title}
+          </Text>
+          <Text style={styles.subTitle} numberOfLines={2}>
+            {subTitle}
+          </Text>
+        </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 }
 
 const styles = StyleSheet.create({
-  car: {
+  card: {
     borderRadius: 15,
-    backgroundColor: Colors.white,
+    backgroundColor: colors.white,
     marginBottom: 20,
-    overflow: 'hidden',
-  },
-  image: {
-    width: '100%',
-    height: 200,
+    overflow: "hidden",
   },
   detailsContainer: {
     padding: 20,
   },
+  image: {
+    width: "100%",
+    height: 200,
+  },
+  subTitle: {
+    color: colors.secondary,
+    fontWeight: "bold",
+  },
   title: {
     marginBottom: 7,
   },
-  subTitle: {
-    color: Colors.secondary,
-    fontWeight: 'bold',
-  },
 });
+
 export default Card;

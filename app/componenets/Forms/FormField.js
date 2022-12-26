@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import AppTextInput from '../AppTextInput';
+import AppTextInput from '../TextInput';
 
 import ErrorMessage from './ErrorMessage';
 import { useFormikContext } from 'formik';
