@@ -6,6 +6,9 @@ import { ListItem, ListItemSeparator } from '../componenets/lists';
 import colors from '../config/colors';
 import Icon from '../componenets/Icon';
 
+
+import useAuth from '../auth/useAuth';
+
 const menuItems = [
   {
     title: 'My Listings',
@@ -25,13 +28,15 @@ const menuItems = [
 ];
 
 function AccountScreen({ navigation }) {
+  const { user, logOut } = useAuth();
+
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
-          title='Amar Gher'
-          subTitle='augustine2903a@gmail.com'
-          image={require('../assets/amar1.png')}
+          title={user.name}
+          subTitle={user.email}
+          image={require("../assets/amar1.png")}
         />
       </View>
       <View style={styles.container}>
@@ -54,8 +59,9 @@ function AccountScreen({ navigation }) {
         />
       </View>
       <ListItem
-        title='Log Out'
-        IconComponent={<Icon name='logout' backgroundColor='#ffe66d' />}
+        title="Log Out"
+        IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
+        onPress={() => logOut()}
       />
     </Screen>
   );

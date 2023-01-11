@@ -16,7 +16,7 @@ function NewListingButton({ onPress }) {
       </View>
     </TouchableOpacity>
   );
-}
+} 
 
 const styles = StyleSheet.create({
   container: {
