@@ -4,19 +4,14 @@ import Button from '../componenets/Button';
 import routes from '../navigation/routes';
 import Screen from '../componenets/Screen';
 import Card from '../componenets/Card';
-import colors from '../config/colors';
+import colors from '../config/Colors';
 import AppText from '../componenets/AppText';
 import ActivityIndicator from '../componenets/ActivityIndicator';
-import listingsApi from "../api/listings";
+import listingsApi from '../api/listings';
 import useApi from '../hooks/useApi';
 
 function ListingsScreen({ navigation }) {
-  const {
-    data: listings,
-    error,
-    loading,
-    request: loadListings,
-  } = useApi(listingsApi.getListings);
+  const { data: listings, error, loading, request: loadListings } = useApi(listingsApi.getListings);
 
   useEffect(() => {
     loadListings();

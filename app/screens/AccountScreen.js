@@ -3,9 +3,8 @@ import { StyleSheet, View, FlatList } from 'react-native';
 
 import Screen from '../componenets/Screen';
 import { ListItem, ListItemSeparator } from '../componenets/lists';
-import colors from '../config/colors';
+import colors from '../config/Colors';
 import Icon from '../componenets/Icon';
-
 
 import useAuth from '../auth/useAuth';
 
@@ -33,11 +32,7 @@ function AccountScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
-        <ListItem
-          title={user.name}
-          subTitle={user.email}
-          image={require("../assets/amar1.png")}
-        />
+        <ListItem title={user.name} subTitle={user.email} image={require('../assets/amar1.png')} />
       </View>
       <View style={styles.container}>
         <FlatList
@@ -47,20 +42,15 @@ function AccountScreen({ navigation }) {
           renderItem={({ item }) => (
             <ListItem
               title={item.title}
-              IconComponent={
-                <Icon
-                  name={item.icon.name}
-                  backgroundColor={item.icon.backgroundColor}
-                />
-              }
+              IconComponent={<Icon name={item.icon.name} backgroundColor={item.icon.backgroundColor} />}
               onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
         />
       </View>
       <ListItem
-        title="Log Out"
-        IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
+        title='Log Out'
+        IconComponent={<Icon name='logout' backgroundColor='#ffe66d' />}
         onPress={() => logOut()}
       />
     </Screen>
